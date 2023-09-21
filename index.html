@@ -9,22 +9,25 @@
   <body>
     <header>
       <h1 class="header__title title">CSS animations exemples</h1>
+      <div class="separation"></div>
     </header>
     <main class="container">
       <!-- **********************************change opacity btn -->
       <section class="animation">
         <h2 class="animation__title title">Change opacity</h2>
-        <p class="animation__tools">:hover, ::after</p>
+        <p class="animation__tools">:hover, ::after, radial-gradient</p>
         <div class="animation__content">
-          <button class="btn btn-opacity">Fly over me !</button>
+          <button class="btn btn-opacity btn-opacity--ellipse">ellipse</button>
+          <button class="btn btn-opacity btn-opacity--circle">circle</button>
+
         </div>
       </section>
-      <!-- **********************************square -->
+      <!-- **********************************element -->
       <section class="animation">
         <h2 class="animation__title title">Translate element</h2>
         <p class="animation__tools">:hover, TranslateY</p>
         <div class="animation__content">
-            <div class="element"><p>Come hover me</p></div>
+            <div class="element"><p>come hover me</p></div>
       </section>
 
       <!-- **********************************Transform rotate -->
@@ -57,7 +60,7 @@
         <h2 class="animation__title title">Loading bar</h2>
         <p class="animation__tools">:active, scaleX, transform-origin</p>
         <div class="animation__content">
-          <div class="animation__scaleX-btn btn">Load me !</div>
+          <div class="animation__scaleX-btn btn">Push me !</div>
           <div class="progress">
             <div class="progress__bar"></div>
           </div>        
