@@ -1,0 +1,75 @@
+$prog-bar-dur: 5000ms;
+$prog-bar-delay: 150ms;
+$animal-delay: $prog-bar-dur + $prog-bar-delay;
+
+.loader {
+  overflow: hidden;
+  &__img {
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    background-image: url("../../assets/images/cute-animal.jpg");
+    background-size: cover;
+    background-position: -100%;
+    z-index: 1;
+    opacity: 0;
+    animation: animal 0ms $animal-delay both;
+    animation-fill-mode: forwards;
+  }
+  &__progress {
+    width: 100%;
+    height: 30px;
+    border-radius: $box-border-rad;
+    overflow: hidden;
+    &-bar {
+      width: 100%;
+      height: 30px;
+      position: relative;
+      border-radius: $box-border-rad;
+      overflow: hidden;
+      background-color: $green-light;
+      transform-origin: left;
+      transform: scaleX(0.5);
+      animation: progress-bar-img $prog-bar-dur $prog-bar-delay both;
+      //   animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+    }
+  }
+}
+
+@keyframes progress-bar-img {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    transform: scaleX(0.81);
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes animal {
+  0% {
+    transform: translateX(-9999px);
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

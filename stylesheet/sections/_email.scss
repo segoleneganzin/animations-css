@@ -1,0 +1,32 @@
+.form {
+  &__group {
+    gap: 1rem;
+    & input {
+      color: $input-txt;
+      outline: none;
+      width: 80%;
+      &:focus {
+        border: 2px solid $input-txt;
+      }
+      &:not(:focus):invalid {
+        background-color: $input-danger;
+        border: 2px solid $input-danger;
+        color: $input-txt--invalid;
+        animation: headshake 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
+        // animation-iteration-count: 3;
+      }
+    }
+  }
+}
+
+$shake-intensity: 1%;
+@keyframes headshake {
+  25% {
+    // at right
+    transform: translateX($shake-intensity);
+  }
+  75% {
+    // at left
+    transform: translateX($shake-intensity * -1);
+  }
+}
