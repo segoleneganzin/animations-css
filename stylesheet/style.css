@@ -55,13 +55,13 @@ body {
 }
 
 .btn {
-  background: #236d09;
+  background: #94b4d1;
   padding: 20px;
   border-radius: 5rem;
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
-  border: 1px solid #236d09;
+  border: 1px solid #94b4d1;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -81,13 +81,30 @@ body {
 .btn {
   font-weight: 600;
   font-size: 25px;
-  color: #d6d4d4;
 }
 
 .header__title {
   padding: 50px 0;
 }
 
+.separation {
+  width: 100%;
+  height: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  animation: separation-progress 5000ms;
+  transform-origin: left;
+}
+
+@keyframes separation-progress {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 /******************************************** transform rotate */
 .animation__rotate-box-container {
   display: flex;
@@ -182,22 +199,21 @@ body {
 }
 
 /* ********************************************* square */
-.square {
+.element {
   border-radius: 100%;
   height: 100px;
   width: 100px;
   padding: 20px;
-  background-color: #236d09;
+  background-color: #94b4d1;
   transition: transform 3000ms;
   transition-timing-function: ease-in;
 }
-.square p {
-  color: #d6d4d4;
+.element p {
   font-style: italic;
   padding-top: 20px;
 }
 
-.square:hover {
+.element:hover {
   transform: translateY(100%);
 }
 
@@ -205,7 +221,8 @@ body {
 .back-stars {
   width: 100%;
   height: 100%;
-  background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
+  background: linear-gradient(black, #000099);
+  padding-bottom: 25px;
 }
 
 .stars {
@@ -217,13 +234,13 @@ body {
 }
 
 .star-1 {
-  margin-top: 15%;
+  margin-top: 5%;
   margin-left: 60%;
   animation-duration: 1s;
   animation-name: twinkle;
 }
 .star-2 {
-  margin-top: 25%;
+  margin-top: 15%;
   margin-left: 25%;
   animation-duration: 0.9s;
   animation-name: twinkle;
@@ -243,10 +260,11 @@ body {
 }
 .btn-opacity {
   border: none;
-  padding: 10px;
+  padding: 20px;
   font-weight: 800;
   font-size: 20px;
-  background-color: #236d09;
+  min-width: 200px;
+  background-color: #94b4d1;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -261,8 +279,13 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: radial-gradient(circle, #2b850b 0%, #143e05 100%);
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
+}
+.btn-opacity--ellipse::after {
+  background: radial-gradient(ellipse at top, #a6c1d9 0%, #709bc2 100%);
+}
+.btn-opacity--circle::after {
+  background: radial-gradient(circle, #a6c1d9 0%, #709bc2 100%);
 }/*# sourceMappingURL=style.css.map */
