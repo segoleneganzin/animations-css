@@ -1,0 +1,268 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+body {
+  background-color: #d6d4d4;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title {
+  margin: 0%;
+  background-color: black;
+  color: #d6d4d4;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 5rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+  border-radius: 2rem;
+  padding: 0 20px 20px 20px;
+  min-width: 300px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.animation__title {
+  padding: 10px 50px;
+}
+.animation__tools {
+  font-style: italic;
+}
+.animation__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.btn {
+  background: #236d09;
+  padding: 20px;
+  border-radius: 5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid #236d09;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/****** Imports ***********/
+/* google font Roboto */
+/* google font Shrikhand */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 25px;
+  color: #d6d4d4;
+}
+
+.header__title {
+  padding: 50px 0;
+}
+
+/******************************************** transform rotate */
+.animation__rotate-box-container {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.box {
+  font-size: 10px;
+  height: 50px;
+  width: 50px;
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 20px;
+}
+.box-1 {
+  transition: transform 500ms ease-in-out;
+}
+.box-2 {
+  background: pink;
+  transition: transform 500ms ease-in-out;
+}
+
+#animation__rotate:checked ~ .animation__rotate-box-container > .box-1 {
+  transform: rotate(360deg);
+}
+#animation__rotate:checked ~ .animation__rotate-box-container > .box-2 {
+  transform: rotate(1turn);
+}
+
+/******************************************** charge bar */
+.progress {
+  width: 100%;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.progress__bar {
+  width: 99%;
+  height: 25px;
+  background-color: #a5d6a7;
+  margin: 2.5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1000ms cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+.animation__scaleX-btn:active + .progress > .progress__bar {
+  animation-name: progress-bar;
+  animation-duration: 1000ms;
+  opacity: 0;
+}
+
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+  }
+  46% {
+    transform: scaleX(0.81);
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/******************************************** smiley */
+.control-me::after {
+  content: "😃";
+  font-size: 100px;
+}
+
+#toggle:checked ~ .control-me::after {
+  content: "😩";
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -100vw;
+  /* position: relative;
+    left: 18%;
+    opacity: 0; */
+  /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+
+/* ********************************************* square */
+.square {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  background-color: #236d09;
+  transition: transform 3000ms;
+  transition-timing-function: ease-in;
+}
+.square p {
+  color: #d6d4d4;
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.square:hover {
+  transform: translateY(100%);
+}
+
+/******************************************** stars */
+.back-stars {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
+}
+
+.stars {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+}
+
+.star-1 {
+  margin-top: 15%;
+  margin-left: 60%;
+  animation-duration: 1s;
+  animation-name: twinkle;
+}
+.star-2 {
+  margin-top: 25%;
+  margin-left: 25%;
+  animation-duration: 0.9s;
+  animation-name: twinkle;
+}
+.star-3 {
+  margin-top: 10%;
+  margin-left: 50%;
+  animation-duration: 1.1s;
+  animation-name: twinkle;
+}
+
+@keyframes twinkle {
+  20% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+.btn-opacity {
+  border: none;
+  padding: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: #236d09;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-opacity:hover::after {
+  opacity: 1;
+}
+.btn-opacity::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, #2b850b 0%, #143e05 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+.btn-opacity {
+  border: none;
+  padding: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: $bg-color-btn;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    @include pseudo-elem;
+    background: radial-gradient(
+      circle,
+      lighten($bg-color-btn, 5) 0%,
+      darken($bg-color-btn, 10) 100%
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+  }
+}
