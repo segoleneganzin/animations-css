@@ -302,11 +302,11 @@ body {
   overflow: hidden;
 }
 .loader__img {
-  width: 15%;
-  height: 15%;
-  position: absolute;
+  width: 100%;
+  height: 150px;
   background-image: url("../../assets/images/cute-animal.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: -100%;
   z-index: 1;
   opacity: 0;
