@@ -62,3 +62,10 @@ body {
   border: 1px solid $bg-color-btn;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+input {
+  height: 20px;
+  padding: 5px 10px;
+  border: 2px solid $input-border;
+  border-radius: $box-border-rad;
+}
