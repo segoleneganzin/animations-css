@@ -1,5 +1,5 @@
 /* ********************************************* square */
-.square {
+.element {
   border-radius: 100%;
   height: 100px;
   width: 100px;
@@ -10,9 +10,10 @@
   p {
     color: $bg-color;
     font-style: italic;
+    font-weight: 600;
     padding-top: 20px;
   }
 }
-.square:hover {
+.element:hover {
   transform: translateY(100%);
 }

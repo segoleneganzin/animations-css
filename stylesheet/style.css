@@ -182,7 +182,7 @@ body {
 }
 
 /* ********************************************* square */
-.square {
+.element {
   border-radius: 100%;
   height: 100px;
   width: 100px;
@@ -191,13 +191,14 @@ body {
   transition: transform 3000ms;
   transition-timing-function: ease-in;
 }
-.square p {
+.element p {
   color: #d6d4d4;
   font-style: italic;
+  font-weight: 600;
   padding-top: 20px;
 }
 
-.square:hover {
+.element:hover {
   transform: translateY(100%);
 }
 
