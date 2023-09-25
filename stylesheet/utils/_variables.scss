@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $bg-color: #d6d4d4;
 $title-color: #d6d4d4;
 $bg-color-btn: #94b4d1;
@@ -11,3 +13,10 @@ $input-txt: #6300a0;
 $input-border: #fff;
 $input-txt--invalid: #fff;
 $input-danger: #b20a37;
+
+// loader
+$loader-bars: #c70039;
+$loader-size: 1vh;
+$loader-anim-dur: 1000ms;
+$loader-num-bars: 5;
+$loader-anim-delay: math.div($loader-anim-dur, $loader-num-bars);
