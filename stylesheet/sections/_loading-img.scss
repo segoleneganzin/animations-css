@@ -1,8 +1,8 @@
 $prog-bar-dur: 5000ms;
 $prog-bar-delay: 150ms;
-$animal-delay: $prog-bar-dur + $prog-bar-delay;
+$animal-delay: $prog-bar-dur;
 
-.loader {
+.loading {
   overflow: hidden;
   &__img {
     width: 100%;
@@ -13,7 +13,7 @@ $animal-delay: $prog-bar-dur + $prog-bar-delay;
     background-position: -100%;
     z-index: 1;
     opacity: 0;
-    animation: animal 0ms $animal-delay both;
+    animation: loading-animal 200ms $animal-delay both;
     animation-fill-mode: forwards;
   }
   &__progress {
@@ -60,16 +60,13 @@ $animal-delay: $prog-bar-dur + $prog-bar-delay;
   }
 }
 
-@keyframes animal {
+@keyframes loading-animal {
   0% {
-    transform: translateX(-9999px);
-    opacity: 0;
-  }
-  99% {
-    opacity: 0;
+    opacity: 1;
+    transform: scale(0);
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: scale(1);
   }
 }
