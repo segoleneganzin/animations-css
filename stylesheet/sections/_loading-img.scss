@@ -1,0 +1,72 @@
+$prog-bar-dur: 5000ms;
+$prog-bar-delay: 150ms;
+$animal-delay: $prog-bar-dur;
+
+.loading {
+  overflow: hidden;
+  &__img {
+    width: 250px;
+    height: 250px;
+    background-image: url("../../assets/images/lama.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0;
+    border-radius: 100%;
+    animation: loading-animal 200ms $animal-delay both;
+    animation-fill-mode: forwards;
+  }
+  &__progress {
+    width: 100%;
+    height: 30px;
+    border-radius: $box-border-rad;
+    overflow: hidden;
+    &-bar {
+      width: 100%;
+      height: 30px;
+      position: relative;
+      border-radius: $box-border-rad;
+      overflow: hidden;
+      background-color: $second-color;
+      transform-origin: left;
+      transform: scaleX(0.5);
+      animation: progress-bar-img $prog-bar-dur $prog-bar-delay both;
+      //   animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+    }
+  }
+}
+
+@keyframes progress-bar-img {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    transform: scaleX(0.81);
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes loading-animal {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

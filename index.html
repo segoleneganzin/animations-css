@@ -1,101 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./stylesheet/style.css" />
-    <title>Animation library</title>
-  </head>
-  <body>
-    <header>
-      <h1 class="header__title title">CSS animations exemples</h1>
-      <div class="separation"></div>
-    </header>
-    <main class="container">
-       <!-- **********************************email validation -->
-       <section class="animation">
-        <h2 class="animation__title title">Email validation</h2>
-        <p class="animation__tools">animation, keyframe</p>
-        <div class="animation__content form__group">
-          <label for="email-input">Your mail</label>
-          <input type="email" name="email-input" class="animation__email">  
-      </section>
-      <!-- **********************************loader img -->
-      <section class="animation">
-        <h2 class="animation__title title">Loader image</h2>
-        <p class="animation__tools">animation, keyframe</p>
-        <div class="animation__content loader">
-          <div class="loader__img"></div>
-          <div class="loader__progress">
-            <div class="loader__progress-bar"></div>
-          </div>   
-      </section>
-      <!-- **********************************change opacity btn -->
-      <section class="animation">
-        <h2 class="animation__title title">Change opacity</h2>
-        <p class="animation__tools">:hover, ::after, radial-gradient</p>
-        <div class="animation__content">
-          <button class="btn btn-opacity btn-opacity--ellipse">ellipse</button>
-          <button class="btn btn-opacity btn-opacity--circle">circle</button>
 
-        </div>
-      </section>
-      <!-- **********************************element -->
-      <section class="animation">
-        <h2 class="animation__title title">Translate element</h2>
-        <p class="animation__tools">:hover, TranslateY</p>
-        <div class="animation__content">
-            <div class="element"><p>come hover me</p></div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- FontAwesome icones -->
+  <script src="https://kit.fontawesome.com/90b69218b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./stylesheet/style.css" />
+  <title>Animation library</title>
+</head>
 
-      <!-- **********************************Transform rotate -->
-      <section class="animation">
-        <h2 class="animation__title title">Rotate</h2>
-        <p class="animation__tools">:checked</p>
-        <div class="animation__content">
-          <input type="checkbox" id="animation__rotate" class="visually-hidden" />
-          <label for="animation__rotate" class="btn">Rotate me !</label>
-          <div class="animation__rotate-box-container">
-            <div class="box-1 box">360deg</div>
-            <div class="box-2 box">1turn</div>
-          </div>        
+<body>
+  <header class="header">
+    <h1 class="header__title title"><span class="header__title-emphase">CSS</span> animations examples</h1>
+    <div class="separation"></div>
+  </header>
+  <main class="container">
+    <p class="presentation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nobis incidunt
+      reprehenderit quibusdam sequi dignissimos nesciunt maiores eveniet quisquam ipsam officia ipsa iure, assumenda,
+      maxime cum enim? Cum, minus cupiditate!</p>
+    <!-- **********************************heart like -->
+    <section class="animation">
+      <h2 class="animation__title title">Like</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <div class="heart">
+          <input type="checkbox" id="heart" class="visually-hidden">
+          <label for="heart">
+            <i class="fa-regular fa-heart heart--unlike"></i>
+            <i class="fa-solid fa-heart heart--like"></i>
+          </label>
         </div>
-      </section>
+      </div>
+    </section>
+    <!-- **********************************loader -->
+    <section class="animation">
+      <h2 class="animation__title title">Loader</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content">
+        <div class="load">
+          <div class="load__bar load__bar--1"></div>
+          <div class="load__bar load__bar--2"></div>
+          <div class="load__bar load__bar--3"></div>
+          <div class="load__bar load__bar--4"></div>
+          <div class="load__bar load__bar--5"></div>
+        </div>
+      </div>
+    </section>
+    <!-- **********************************email validation -->
+    <section class="animation">
+      <h2 class="animation__title title">Email validation</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content form__group">
+        <label for="email-input">Your mail</label>
+        <input type="email" name="email-input" class="animation__email" id="email-input">
+    </section>
+    <!-- **********************************loading img -->
+    <section class="animation">
+      <h2 class="animation__title title">Loading image</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content loading">
+        <div class="loading__img"></div>
+        <div class="loading__progress">
+          <div class="loading__progress-bar"></div>
+        </div>
+    </section>
+    <!-- **********************************change opacity btn -->
+    <section class="animation">
+      <h2 class="animation__title title">Change opacity</h2>
+      <p class="animation__tools">:hover, ::after, radial-gradient</p>
+      <div class="animation__content">
+        <button class="btn btn-opacity btn-opacity--ellipse">ellipse</button>
+        <button class="btn btn-opacity btn-opacity--circle">circle</button>
 
-      <!-- **********************************Transform smiley -->
-      <section class="animation">
-        <h2 class="animation__title title">Change smiley</h2>
-        <p class="animation__tools">:checked</p>
-        <div class="animation__content">
-          <label for="toggle" class="btn">Change my face</label>
-          <input type="checkbox" id="toggle" class="visually-hidden" />
-          <div class="control-me"></div>        
+      </div>
+    </section>
+    <!-- **********************************element -->
+    <section class="animation">
+      <h2 class="animation__title title">Translate element</h2>
+      <p class="animation__tools">:hover, TranslateY</p>
+      <div class="animation__content">
+        <div class="element">
+          <p>come hover me</p>
         </div>
-      </section>
+    </section>
 
-      <!-- **********************************Loading bar -->
-      <section class="animation">
-        <h2 class="animation__title title">Loading bar</h2>
-        <p class="animation__tools">:active, scaleX, transform-origin</p>
-        <div class="animation__content">
-          <div class="animation__scaleX-btn btn">Push me !</div>
-          <div class="progress">
-            <div class="progress__bar"></div>
-          </div>        
+    <!-- **********************************Transform rotate -->
+    <section class="animation">
+      <h2 class="animation__title title">Rotate</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <input type="checkbox" id="animation__rotate" class="visually-hidden" />
+        <label for="animation__rotate" class="btn">Rotate me !</label>
+        <div class="animation__rotate-box-container">
+          <div class="box-1 box">deg</div>
+          <div class="box-2 box">turn</div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- **********************************stars -->
-      <section class="animation">
-        <h2 class="animation__title title">Twinkle keyframe</h2>
-        <div class="animation__content">
-          <div class="back-stars">
-            <div class="star-1 stars"></div>
-            <div class="star-2 stars"></div>
-            <div class="star-3 stars"></div>
-          </div>        
+    <!-- **********************************Transform smiley -->
+    <section class="animation">
+      <h2 class="animation__title title">Change smiley</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <label for="toggle" class="btn">Change my face</label>
+        <input type="checkbox" id="toggle" class="visually-hidden" />
+        <div class="control-me"></div>
+      </div>
+    </section>
+
+    <!-- **********************************Loading bar -->
+    <section class="animation">
+      <h2 class="animation__title title">Loading bar</h2>
+      <p class="animation__tools">:active, scaleX, transform-origin</p>
+      <div class="animation__content">
+        <div class="animation__scaleX-btn btn">Push me !</div>
+        <div class="progress">
+          <div class="progress__bar"></div>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+
+    <!-- **********************************stars -->
+    <section class="animation">
+      <h2 class="animation__title title">Twinkle keyframe</h2>
+      <div class="animation__content">
+        <div class="back-stars">
+          <div class="star-1 stars"></div>
+          <div class="star-2 stars"></div>
+          <div class="star-3 stars"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>

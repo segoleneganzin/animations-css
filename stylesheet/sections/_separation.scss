@@ -1,14 +1,14 @@
 .separation {
   width: 100%;
   height: 10px;
-  background: rgb(2, 0, 36);
+  background: $principal-color;
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
+    $principal-color 0%,
+    $second-color 80%,
+    $third-color 100%
   );
-  animation: separation-progress 5000ms;
+  animation: separation-progress $separation-anim-dur;
   transform-origin: left;
 }
 

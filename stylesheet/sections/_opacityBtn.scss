@@ -1,10 +1,5 @@
 .btn-opacity {
-  border: none;
-  padding: 20px;
-  font-weight: 800;
-  font-size: 20px;
-  min-width: 200px;
-  background-color: $bg-color-btn;
+  padding: 20px 50px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -24,16 +19,16 @@
   &--ellipse::after {
     background: radial-gradient(
       ellipse at top,
-      lighten($bg-color-btn, 5) 0%,
-      darken($bg-color-btn, 10) 100%
+      lighten($second-color, 5) 0%,
+      darken($second-color, 10) 100%
     );
   }
 
   &--circle::after {
     background: radial-gradient(
       circle,
-      lighten($bg-color-btn, 5) 0%,
-      darken($bg-color-btn, 10) 100%
+      lighten($second-color, 5) 0%,
+      darken($second-color, 10) 100%
     );
   }
 }

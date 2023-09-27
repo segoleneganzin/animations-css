@@ -1,0 +1,35 @@
+.heart {
+  position: relative;
+  font-size: 150px;
+  &--like {
+    position: absolute;
+    left: 0%;
+    top: 6%;
+    opacity: 0;
+    @include text-gradient;
+  }
+  #heart:checked + label .heart {
+    &--unlike {
+      opacity: 0;
+    }
+    &--like {
+      opacity: 1;
+    }
+  }
+}
+
+// .heart {
+//   color: #fff;
+//   background-color: #000;
+//   border-radius: 50%;
+//   padding: 0.2em;
+//   &::before {
+//     content: "\f004";
+//     font-weight: bold;
+//     transition: color 1s ease-out;
+//   }
+//   &:hover::before {
+//     color: red;
+//     cursor: pointer;
+//   }
+// }

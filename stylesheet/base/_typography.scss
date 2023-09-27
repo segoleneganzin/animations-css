@@ -6,15 +6,31 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  color: $txt-color;
 }
 
 .header__title {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 50px;
-  font-weight: 300;
+  font: 300 50px "Shrikhand", sans-serif;
+  &-emphase {
+    font-size: 100px;
+    text-shadow: $second-color 2px 10px;
+  }
+}
+
+.title {
+  color: $title-color;
+}
+
+.presentation {
+  color: $principal-color;
 }
 
 .btn {
-  font-weight: 600;
+  font: 300 20px "Roboto", sans-serif;
+  color: $btn-txt-color;
+}
+
+.box {
   font-size: 25px;
+  color: $principal-color;
 }
