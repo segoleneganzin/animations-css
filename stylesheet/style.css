@@ -83,6 +83,10 @@ body {
   color: #042959;
 }
 
+.element p {
+  color: #042959;
+}
+
 .animation {
   background-color: #042959;
   display: flex;
@@ -167,6 +171,42 @@ body {
   opacity: 1;
 }
 
+.load {
+  width: 10vh;
+  height: 7.5vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.load__bar {
+  background-color: #c70039;
+  height: 100%;
+  width: 1vh;
+  animation: bars 1000ms backwards infinite ease-in-out alternate;
+}
+.load__bar--1 {
+  animation-delay: 200ms;
+}
+.load__bar--2 {
+  animation-delay: 400ms;
+}
+.load__bar--3 {
+  animation-delay: 600ms;
+}
+.load__bar--4 {
+  animation-delay: 800ms;
+}
+.load__bar--5 {
+  animation-delay: 1000ms;
+}
+
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 .load {
   width: 10vh;
   height: 7.5vh;
@@ -289,9 +329,12 @@ body {
   0% {
     opacity: 1;
     transform: scale(0);
+    opacity: 1;
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
     transform: scale(1);
   }
 }
@@ -333,8 +376,6 @@ body {
   transition-timing-function: ease-in;
 }
 .element p {
-  font-style: italic;
-  font-weight: 600;
   padding-top: 20px;
 }
 

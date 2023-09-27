@@ -7,6 +7,34 @@
     background-color: $loader-bars;
     height: 100%;
     width: $loader-size;
+    animation: bars $loader-anim-dur backwards infinite ease-in-out alternate;
+    // animation-direction: alternate;
+    @for $i from 1 through $loader-num-bars {
+      &--#{$i} {
+        animation-delay: $loader-anim-delay * $i;
+      }
+    }
+  }
+}
+
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.load {
+  width: $loader-size * 10;
+  height: $loader-size * 7.5;
+  display: flex;
+  justify-content: space-evenly;
+  &__bar {
+    background-color: $loader-bars;
+    height: 100%;
+    width: $loader-size;
     animation: bars $loader-anim-dur ease-in-out backwards infinite alternate;
     // animation-direction: alternate;
     @for $i from 1 through $loader-num-bars {

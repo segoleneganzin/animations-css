@@ -1,7 +1,7 @@
 $prog-bar-dur: 5000ms;
 $prog-bar-delay: 150ms;
 $animal-delay: $prog-bar-dur;
-
+$animal-delay: $prog-bar-dur;
 .loading {
   overflow: hidden;
   &__img {
@@ -64,9 +64,12 @@ $animal-delay: $prog-bar-dur;
   0% {
     opacity: 1;
     transform: scale(0);
+    opacity: 1;
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
     transform: scale(1);
   }
 }
