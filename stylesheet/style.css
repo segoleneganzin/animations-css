@@ -27,23 +27,12 @@ body {
   margin: auto;
 }
 
-input {
-  height: 30px;
-  padding: 5px 10px;
-  border: 2px solid #fff;
-  border-radius: 0.5rem;
-}
-
 /****** Imports ***********/
 /* google font Roboto */
 /* google font Shrikhand */
 body {
   font-family: "Roboto", sans-serif;
   color: #9bdaf2;
-}
-
-input {
-  color: #042959;
 }
 
 .title {
@@ -128,6 +117,17 @@ input {
 .btn:active {
   box-shadow: none;
   transform: translate(1px, 5px);
+}
+
+input {
+  color: #042959;
+}
+
+input {
+  height: 30px;
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
 }
 
 .header {
