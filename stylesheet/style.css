@@ -27,21 +27,6 @@ body {
   margin: auto;
 }
 
-.btn {
-  background: #c70039;
-  padding: 20px;
-  border-radius: 5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-  border: 1px solid #c70039;
-  box-shadow: 2px 6px 0px #94002a;
-}
-.btn:active {
-  box-shadow: none;
-  transform: translate(2px, 5px);
-}
-
 input {
   height: 30px;
   padding: 5px 10px;
@@ -61,16 +46,17 @@ input {
   color: #042959;
 }
 
+.title {
+  color: #9bdaf2;
+  letter-spacing: 0.2rem;
+}
+
 .header__title {
   font: 300 50px "Shrikhand", sans-serif;
 }
 .header__title-emphase {
   font-size: 100px;
   text-shadow: #c70039 2px 10px;
-}
-
-.title {
-  color: #9bdaf2;
 }
 
 .presentation {
@@ -97,9 +83,9 @@ input {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  flex-basis: 20%;
+  flex-basis: 15%;
   border-radius: 2rem;
-  padding: 0 20px 30px 20px;
+  padding: 0 20px 20px 20px;
   min-width: 300px;
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -126,6 +112,22 @@ input {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding-bottom: 10px;
+}
+
+.btn {
+  background: #c70039;
+  padding: 10px 20px;
+  border-radius: 5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid #c70039;
+  box-shadow: 1px 6px 0px #94002a;
+}
+.btn:active {
+  box-shadow: none;
+  transform: translate(1px, 5px);
 }
 
 .header {
@@ -153,6 +155,10 @@ input {
     transform: scaleX(1);
   }
 }
+.presentation {
+  flex-basis: 80%;
+}
+
 .heart {
   color: #c70039;
   position: relative;
@@ -210,42 +216,7 @@ input {
   height: 7.5vh;
   display: flex;
   justify-content: space-evenly;
-}
-.load__bar {
-  background-color: #c70039;
-  height: 100%;
-  width: 1vh;
-  animation: bars 1000ms backwards infinite ease-in-out alternate;
-}
-.load__bar--1 {
-  animation-delay: 200ms;
-}
-.load__bar--2 {
-  animation-delay: 400ms;
-}
-.load__bar--3 {
-  animation-delay: 600ms;
-}
-.load__bar--4 {
-  animation-delay: 800ms;
-}
-.load__bar--5 {
-  animation-delay: 1000ms;
-}
-
-@keyframes bars {
-  0% {
-    transform: scaleY(0.5);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-.load {
-  width: 10vh;
-  height: 7.5vh;
-  display: flex;
-  justify-content: space-evenly;
+  padding-top: 10px;
 }
 .load__bar {
   background-color: #c70039;
@@ -303,36 +274,61 @@ input {
   }
 }
 .loading {
+  position: relative;
   overflow: hidden;
 }
 .loading__img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   background-image: url("../../assets/images/lama.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   opacity: 0;
   border-radius: 100%;
-  animation: loading-animal 200ms 5000ms both;
   animation-fill-mode: forwards;
-}
-.loading__progress {
-  width: 100%;
-  height: 30px;
-  border-radius: 2rem;
-  overflow: hidden;
+  position: absolute;
 }
 .loading__progress-bar {
+  position: absolute;
+  top: 25%;
   width: 100%;
   height: 30px;
-  position: relative;
   border-radius: 2rem;
   overflow: hidden;
-  background-color: #c70039;
+  opacity: 0;
   transform-origin: left;
-  transform: scaleX(0.5);
+  background-color: #c70039;
+}
+.loading__btn {
+  position: relative;
+  margin-top: 60%;
+}
+.loading__btn::before {
+  content: "launch";
+  opacity: 1;
+}
+.loading__btn::after {
+  content: "clean";
+  position: absolute;
+  left: 27%;
+  opacity: 0;
+}
+
+#reload-img:checked ~ .loading__img {
+  animation: animal-img 200ms 5000ms both;
+}
+#reload-img:checked ~ .loading__progress-bar {
   animation: progress-bar-img 5000ms 150ms both;
+}
+#reload-img:checked ~ .loading__btn {
+  animation: change-btn-txt 6000ms;
+}
+#reload-img:checked ~ .loading__btn::before {
+  opacity: 0;
+}
+#reload-img:checked ~ .loading__btn::after {
+  opacity: 1;
 }
 
 @keyframes progress-bar-img {
@@ -358,21 +354,32 @@ input {
     opacity: 0;
   }
 }
-@keyframes loading-animal {
+@keyframes animal-img {
   0% {
-    opacity: 1;
-    transform: scale(0);
     opacity: 1;
     transform: scale(0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes change-btn-txt {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
 }
 .btn-opacity {
-  padding: 20px 50px;
+  padding: 10px 50px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -398,7 +405,7 @@ input {
   background: radial-gradient(circle, #e10040 0%, #94002a 100%);
 }
 
-/* ********************************************* square */
+/* ********************************************* translate circle */
 .element {
   border-radius: 100%;
   height: 100px;
@@ -416,7 +423,7 @@ input {
   transform: translateY(100%);
 }
 
-/******************************************** transform rotate */
+/******************************************** transform box rotate */
 .animation__rotate-box-container {
   display: flex;
   gap: 3rem;
@@ -440,10 +447,10 @@ input {
   transition: transform 500ms ease-in-out;
 }
 
-#animation__rotate:checked ~ .animation__rotate-box-container > .box-1 {
+#box-rotate:checked ~ .animation__rotate-box-container > .box-1 {
   transform: rotate(360deg);
 }
-#animation__rotate:checked ~ .animation__rotate-box-container > .box-2 {
+#box-rotate:checked ~ .animation__rotate-box-container > .box-2 {
   transform: rotate(1turn);
 }
 
@@ -466,7 +473,7 @@ input {
   /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
 }
 
-/******************************************** charge bar */
+/******************************************** loading bar */
 .progress {
   width: 100%;
   height: 30px;
@@ -507,7 +514,7 @@ input {
     transform: scaleX(1);
   }
 }
-/******************************************** stars */
+/******************************************** twinkle stars */
 .back-stars {
   width: 100%;
   height: 100%;

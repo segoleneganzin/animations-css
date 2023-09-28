@@ -1,37 +1,67 @@
+// ****************************************** loading image
+@use "sass:math";
+
 $prog-bar-dur: 5000ms;
 $prog-bar-delay: 150ms;
+$animal-dur: 200ms;
 $animal-delay: $prog-bar-dur;
-$animal-delay: $prog-bar-dur;
+$btn-dur: 6000ms;
+
 .loading {
+  position: relative;
   overflow: hidden;
   &__img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     background-image: url("../../assets/images/lama.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
     opacity: 0;
     border-radius: 100%;
-    animation: loading-animal 200ms $animal-delay both;
     animation-fill-mode: forwards;
+    position: absolute;
   }
-  &__progress {
+  &__progress-bar {
+    position: absolute;
+    top: 25%;
     width: 100%;
     height: 30px;
     border-radius: $box-border-rad;
     overflow: hidden;
-    &-bar {
-      width: 100%;
-      height: 30px;
-      position: relative;
-      border-radius: $box-border-rad;
-      overflow: hidden;
-      background-color: $second-color;
-      transform-origin: left;
-      transform: scaleX(0.5);
-      animation: progress-bar-img $prog-bar-dur $prog-bar-delay both;
-      //   animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+    opacity: 0;
+    transform-origin: left;
+    background-color: $second-color;
+  }
+  &__btn {
+    position: relative;
+    margin-top: 60%;
+    &::before {
+      content: "launch";
+      opacity: 1;
+    }
+    &::after {
+      content: "clean";
+      position: absolute;
+      left: 27%;
+      opacity: 0;
+    }
+  }
+}
+#reload-img:checked ~ .loading {
+  &__img {
+    animation: animal-img $animal-dur $animal-delay both;
+  }
+  &__progress-bar {
+    animation: progress-bar-img $prog-bar-dur $prog-bar-delay both;
+  }
+  &__btn {
+    animation: change-btn-txt $btn-dur;
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
     }
   }
 }
@@ -60,16 +90,28 @@ $animal-delay: $prog-bar-dur;
   }
 }
 
-@keyframes loading-animal {
+@keyframes animal-img {
   0% {
-    opacity: 1;
-    transform: scale(0);
     opacity: 1;
     transform: scale(0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes change-btn-txt {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
 }

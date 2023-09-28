@@ -1,4 +1,4 @@
-/******************************************** transform rotate */
+/******************************************** transform box rotate */
 .animation__rotate-box-container {
   display: flex;
   gap: 3rem;
@@ -21,7 +21,7 @@
   }
 }
 
-#animation__rotate:checked ~ .animation__rotate-box-container {
+#box-rotate:checked ~ .animation__rotate-box-container {
   & > .box-1 {
     transform: rotate(360deg);
   }

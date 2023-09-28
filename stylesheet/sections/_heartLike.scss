@@ -1,17 +1,15 @@
+// ********************************************* heart like
 .heart {
-  // @include text-gradient;
   color: $second-color;
   position: relative;
   font-size: 100px;
   &--like {
-    // @include text-gradient;
     color: $second-color;
     position: absolute;
     left: 0%;
     top: 6%;
     opacity: 0;
     transform: scale(0);
-    // transition: transform 5000ms ease-in;
   }
   #heart:checked + label .heart {
     &--like {

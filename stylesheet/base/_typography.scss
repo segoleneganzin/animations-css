@@ -13,16 +13,17 @@ input {
   color: $input-txt;
 }
 
+.title {
+  color: $title-color;
+  letter-spacing: 0.2rem;
+}
+
 .header__title {
   font: 300 50px "Shrikhand", sans-serif;
   &-emphase {
     font-size: 100px;
     text-shadow: $second-color 2px 10px;
   }
-}
-
-.title {
-  color: $title-color;
 }
 
 .presentation {
