@@ -1,0 +1,15 @@
+// ********************************************* buttons
+.btn {
+  background: $second-color;
+  padding: 10px 20px;
+  border-radius: $btn-border-rad;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid $second-color;
+  box-shadow: 1px 6px 0px darken($second-color, 10);
+
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 5px);
+  }
+}

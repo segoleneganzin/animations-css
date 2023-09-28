@@ -1,0 +1,16 @@
+// input
+$input-txt: $principal-color;
+$input-border: #fff;
+$input-txt--invalid: #fff;
+$input-danger: $second-color;
+
+input {
+  color: $input-txt;
+}
+
+input {
+  height: 30px;
+  padding: 5px 10px;
+  border: 2px solid $input-border;
+  border-radius: $input-border-rad;
+}

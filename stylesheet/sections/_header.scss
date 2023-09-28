@@ -1,3 +1,7 @@
-.header__title {
-  padding: 50px 0;
+// ********************************************* header
+.header {
+  background-color: $principal-color;
+  &__title {
+    padding: 50px 0;
+  }
 }

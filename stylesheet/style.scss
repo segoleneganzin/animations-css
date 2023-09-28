@@ -4,14 +4,21 @@
 @import "base/base";
 @import "base/typography";
 
+@import "layout/animationContainer";
+
+@import "components/buttons";
+@import "components/inputs";
+
 @import "sections/header";
 @import "sections/separation";
-@import "sections/boxRotate";
-@import "sections/loadingBar";
-@import "sections/smiley";
-@import "sections/translateCircle";
-@import "sections/stars";
-@import "sections/opacityBtn";
-@import "sections/loading-img";
-@import "sections/email";
+@import "sections/presentation";
+@import "sections/heartLike";
 @import "sections/loader";
+@import "sections/email";
+@import "sections/loading-img";
+@import "sections/opacityBtn";
+@import "sections/translateCircle";
+@import "sections/boxRotate";
+@import "sections/smiley";
+@import "sections/loadingBar";
+@import "sections/stars";

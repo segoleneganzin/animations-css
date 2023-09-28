@@ -1,8 +1,8 @@
+// ********************************************* email validation
 .form {
   &__group {
     gap: 1rem;
     & input {
-      color: $input-txt;
       outline: none;
       width: 80%;
       &:focus {
