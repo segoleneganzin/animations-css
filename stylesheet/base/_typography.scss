@@ -9,6 +9,10 @@ body {
   color: $txt-color;
 }
 
+input {
+  color: $input-txt;
+}
+
 .header__title {
   font: 300 50px "Shrikhand", sans-serif;
   &-emphase {

@@ -43,10 +43,10 @@ body {
 }
 
 input {
-  height: 20px;
+  height: 30px;
   padding: 5px 10px;
   border: 2px solid #fff;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
 }
 
 /****** Imports ***********/
@@ -55,6 +55,10 @@ input {
 body {
   font-family: "Roboto", sans-serif;
   color: #9bdaf2;
+}
+
+input {
+  color: #042959;
 }
 
 .header__title {
@@ -92,10 +96,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-basis: 20%;
   border-radius: 2rem;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 30px 20px;
   min-width: 300px;
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -122,7 +126,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 20px;
 }
 
 .header {
@@ -151,26 +154,57 @@ body {
   }
 }
 .heart {
+  color: #c70039;
   position: relative;
-  font-size: 150px;
+  font-size: 100px;
 }
 .heart--like {
+  color: #c70039;
   position: absolute;
   left: 0%;
   top: 6%;
   opacity: 0;
-  background: -webkit-linear-gradient(100deg, #9bdaf2 0%, #c70039 50%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.heart #heart:checked + label .heart--unlike {
-  opacity: 0;
+  transform: scale(0);
 }
 .heart #heart:checked + label .heart--like {
+  animation: liked 500ms forwards alternate;
+}
+.heart #heart:not(:checked) + label .heart--like {
+  animation: unliked 500ms forwards ease-in-out;
+}
+.heart #heart:not(:checked) + label .heart--unlike {
   opacity: 1;
 }
 
+@keyframes liked {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes unliked {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
 .load {
   width: 10vh;
   height: 7.5vh;
@@ -247,12 +281,11 @@ body {
   gap: 1rem;
 }
 .form__group input {
-  color: #9bdaf2;
   outline: none;
   width: 80%;
 }
 .form__group input:focus {
-  border: 2px solid #9bdaf2;
+  border: 2px solid #042959;
 }
 .form__group input:not(:focus):invalid {
   background-color: #c70039;

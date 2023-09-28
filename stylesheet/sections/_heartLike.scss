@@ -1,35 +1,60 @@
 .heart {
+  // @include text-gradient;
+  color: $second-color;
   position: relative;
-  font-size: 150px;
+  font-size: 100px;
   &--like {
+    // @include text-gradient;
+    color: $second-color;
     position: absolute;
     left: 0%;
     top: 6%;
     opacity: 0;
-    @include text-gradient;
+    transform: scale(0);
+    // transition: transform 5000ms ease-in;
   }
   #heart:checked + label .heart {
-    &--unlike {
-      opacity: 0;
-    }
     &--like {
+      animation: liked 500ms forwards alternate;
+    }
+  }
+  #heart:not(:checked) + label .heart {
+    &--like {
+      animation: unliked 500ms forwards ease-in-out;
+    }
+    &--unlike {
       opacity: 1;
     }
   }
 }
 
-// .heart {
-//   color: #fff;
-//   background-color: #000;
-//   border-radius: 50%;
-//   padding: 0.2em;
-//   &::before {
-//     content: "\f004";
-//     font-weight: bold;
-//     transition: color 1s ease-out;
-//   }
-//   &:hover::before {
-//     color: red;
-//     cursor: pointer;
-//   }
-// }
+@keyframes liked {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes unliked {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
