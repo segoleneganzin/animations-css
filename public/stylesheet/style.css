@@ -368,7 +368,7 @@ input {
 .loading__img {
   width: 150px;
   height: 150px;
-  background-image: url("../../assets/images/lama.jpeg");
+  background-image: url("../images/lama.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
