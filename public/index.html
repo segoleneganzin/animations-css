@@ -1,89 +1,194 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.4.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome icones -->
+  <script src="https://kit.fontawesome.com/90b69218b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./stylesheet/style.css">
+  <title>Animation library</title>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+  <header class="header">
+    <h1 class="header__title title"><span class="header__title-emphase">CSS</span> animations examples</h1>
+    <div class="separation"></div>
+  </header>
+  <main class="container">
+    <div class="presentation">
+      <p>
+        Small library of <span class="presentation--emphase"> CSS only</span> animations (for the moment).
+        <br>
+        I've created this little site in order to practice creating and managing CSS animations with Sass.<br>
+        Each animation is <span class="presentation--emphase">available on Code Pen</span> so you can understand them
+        and adapt them as you see fit!<br>
+        I'll be adding content as I go along.<br>
+      </p>
+      <p>
+        If you have any ideas, questions or advice :<br>
+      </p>
+      <a href="https://www.linkedin.com/in/segoleneganzin/" target="_blank" class="btn">contact me ! </a>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- **********************************heart like -->
+    <section class="animation">
+      <h2 class="animation__title title">Like</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <div class="heart">
+          <input type="checkbox" id="heart" class="visually-hidden">
+          <label for="heart">
+            <i class="fa-regular fa-heart heart--unlike"></i>
+            <i class="fa-solid fa-heart heart--like"></i>
+          </label>
+        </div>
+      </div>
+      <a href="https://codepen.io/segoleneGz/pen/QWzxVVN" target="_blank" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+    <!-- **********************************loader -->
+    <section class="animation">
+      <h2 class="animation__title title">Loader</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content">
+        <div class="load">
+          <div class="load__bar load__bar--1"></div>
+          <div class="load__bar load__bar--2"></div>
+          <div class="load__bar load__bar--3"></div>
+          <div class="load__bar load__bar--4"></div>
+          <div class="load__bar load__bar--5"></div>
+        </div>
+      </div>
+      <a href="https://codepen.io/segoleneGz/pen/BavVqyj" target="_blank" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+    <!-- **********************************email validation -->
+    <section class="animation">
+      <h2 class="animation__title title">Email validation</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content form__group">
+        <label for="email-input">Your mail</label>
+        <input type="email" name="email-input" class="animation__email" id="email-input">
+      </div>
+      <a href="https://codepen.io/segoleneGz/pen/wvRXYKG" target="_blank" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+    <!-- **********************************loading img -->
+    <section class="animation">
+      <h2 class="animation__title title">Loading image</h2>
+      <p class="animation__tools">animation, keyframe</p>
+      <div class="animation__content loading">
+        <input type="checkbox" id="reload-img" class="visually-hidden">
+        <label for="reload-img" class="btn loading__btn"></label>
+        <div class="loading__img"></div>
+        <div class="loading__progress-bar">
+        </div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+    <!-- **********************************change opacity btn -->
+    <section class="animation">
+      <h2 class="animation__title title">Change opacity</h2>
+      <p class="animation__tools">:hover, ::after, radial-gradient</p>
+      <div class="animation__content">
+        <button class="btn btn-opacity btn-opacity--ellipse">ellipse</button>
+        <button class="btn btn-opacity btn-opacity--circle">circle</button>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+    <!-- **********************************element -->
+    <section class="animation">
+      <h2 class="animation__title title">Translate element</h2>
+      <p class="animation__tools">:hover, TranslateY</p>
+      <div class="animation__content">
+        <div class="element">
+          <p>come hover me</p>
+        </div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- **********************************Transform rotate -->
+    <section class="animation">
+      <h2 class="animation__title title">Rotate</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <input type="checkbox" id="box-rotate" class="visually-hidden">
+        <label for="box-rotate" class="btn">Rotate me !</label>
+        <div class="animation__rotate-box-container">
+          <div class="box-1 box">deg</div>
+          <div class="box-2 box">turn</div>
+        </div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <!-- **********************************Transform smiley -->
+    <section class="animation">
+      <h2 class="animation__title title">Change smiley</h2>
+      <p class="animation__tools">:checked</p>
+      <div class="animation__content">
+        <label for="toggle" class="btn">Change my face</label>
+        <input type="checkbox" id="toggle" class="visually-hidden">
+        <div class="control-me"></div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+
+    <!-- **********************************Loading bar -->
+    <section class="animation">
+      <h2 class="animation__title title">Loading bar</h2>
+      <p class="animation__tools">:active, scaleX, transform-origin</p>
+      <div class="animation__content">
+        <div class="animation__scaleX-btn btn">Push me !</div>
+        <div class="progress">
+          <div class="progress__bar"></div>
+        </div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+
+    <!-- **********************************stars -->
+    <section class="animation">
+      <h2 class="animation__title title">Twinkle keyframe</h2>
+      <div class="animation__content">
+        <div class="back-stars">
+          <div class="star-1 stars"></div>
+          <div class="star-2 stars"></div>
+          <div class="star-3 stars"></div>
+        </div>
+      </div>
+      <a href="#" class="animation__codepen-link">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="separation"></div>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/segoleneganzin/" class="footer__link" target="_blank"><i
+          class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.segoleneganzin.fr/" class="footer__link" target="_blank"><i class="fa-solid fa-code"></i></a>
+      <a href="https://github.com/segoleneganzin" class="footer__link" target="_blank"><i
+          class="fa-brands fa-square-github"></i></a>
+    </div>
+    <p class="footer__author">Ségolène Ganzin © 2023</p>
+  </footer>
+</body>
+
 </html>
