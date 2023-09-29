@@ -1,4 +1,19 @@
 // ********************************************* presentation
 .presentation {
+  display: flex;
+  flex-direction: column;
   flex-basis: 80%;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.8;
+  &--emphase {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  p {
+    margin: 0%;
+  }
+  .btn {
+    font-weight: 500;
+  }
 }
