@@ -1,0 +1,22 @@
+.footer {
+  background-color: $principal-color;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 25px;
+  }
+  &__link {
+    &:hover {
+      color: $second-color;
+      transform: scale(1.2);
+    }
+  }
+  &__author {
+    margin: 0;
+  }
+}

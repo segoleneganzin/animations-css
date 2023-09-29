@@ -75,11 +75,9 @@ $btn-dur: 6000ms;
   }
   24% {
     transform: scaleX(0.4);
-    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
   }
   46% {
     transform: scaleX(0.81);
-    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
   }
   99% {
     opacity: 1;

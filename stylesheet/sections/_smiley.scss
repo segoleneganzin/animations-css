@@ -6,12 +6,3 @@
 #toggle:checked ~ .control-me::after {
   content: "😩";
 }
-
-.visually-hidden {
-  position: absolute;
-  left: -100vw;
-  /* position: relative;
-    left: 18%;
-    opacity: 0; */
-  /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
-}
