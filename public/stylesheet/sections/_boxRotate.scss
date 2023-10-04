@@ -11,14 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &-1 {
-    background: $third-color;
-    transition: transform 500ms ease-in-out;
-  }
-  &-2 {
-    background: $third-color;
-    transition: transform 500ms ease-in-out;
-  }
+  background: $third-color;
+  transition: transform 500ms ease-in-out;
 }
 
 #box-rotate:checked ~ .animation__rotate-box-container {
